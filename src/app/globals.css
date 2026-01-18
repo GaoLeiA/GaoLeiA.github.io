@@ -1,0 +1,216 @@
+:root {
+  --primary: #6366f1;
+  --primary-light: #818cf8;
+  --primary-dark: #4f46e5;
+  --secondary: #8b5cf6;
+  --accent: #06b6d4;
+  --accent-light: #22d3ee;
+
+  --dark-bg: #0f172a;
+  --dark-surface: #1e293b;
+  --dark-card: #334155;
+  --dark-border: #475569;
+
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+
+  --ai-color: #8b5cf6;
+  --coding-color: #06b6d4;
+  --system-color: #f59e0b;
+
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-primary);
+  background: var(--dark-bg);
+  color: var(--text-main);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Background Animation */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(6, 182, 212, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--primary-light);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Utility Classes */
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card {
+  background: var(--dark-surface);
+  border: 1px solid var(--dark-border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateX(2px);
+}
+
+/* Badge Styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-right: 0.5rem;
+}
+
+.badge-ai {
+  background: rgba(139, 92, 246, 0.2);
+  color: #c4b5fd;
+}
+
+.badge-coding {
+  background: rgba(6, 182, 212, 0.2);
+  color: #67e8f9;
+}
+
+.badge-system {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fcd34d;
+}
+
+.badge-other {
+  background: var(--dark-card);
+  color: var(--text-muted);
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+article {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+article h1 {
+  font-size: 2.5rem;
+  margin-top: 2rem;
+}
+
+article h2 {
+  font-size: 1.75rem;
+  margin-top: 2rem;
+  color: var(--text-main);
+}
+
+article p {
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+}
+
+article code {
+  background: var(--dark-surface);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  color: var(--accent-light);
+}
+
+article pre {
+  background: var(--dark-surface);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+article pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+article ul,
+article ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  color: var(--text-muted);
+}
+
+article blockquote {
+  border-left: 4px solid var(--primary);
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  color: var(--text-muted);
+}
