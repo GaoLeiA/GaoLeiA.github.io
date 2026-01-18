@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
   <head>
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
     {% include meta.html %}
 
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <!-- Modern fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
-    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
   </head>
 
   <body>
     <div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" alt="{{ site.name }}" /></a>
 
           <div class="site-info">
             <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
@@ -27,11 +28,15 @@
           </div>
 
           <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
-            <a href="https://github.com/GaoLeiA">GitHub</a>
-            <a href="{{ site.baseurl }}/projects">Projects</a>
-            <a href="{{ site.baseurl }}/resume.pdf" target="_blank">Resume</a>
+            <a href="{{ site.baseurl }}/" {% if page.url == "/" %}class="active"{% endif %}>首页</a>
+            <a href="{{ site.baseurl }}/about" {% if page.url == "/about/" %}class="active"{% endif %}>关于</a>
+            <a href="https://github.com/GaoLeiA" target="_blank">GitHub</a>
+            
+            <div class="category-nav">
+              <a href="{{ site.baseurl }}/category/ai" class="cat-ai">🤖 AI</a>
+              <a href="{{ site.baseurl }}/category/coding" class="cat-coding">💻 Coding</a>
+              <a href="{{ site.baseurl }}/category/system" class="cat-system">⚙️ 系统</a>
+            </div>
           </nav>
         </header>
       </div>
@@ -44,6 +49,9 @@
     <div class="wrapper-footer">
       <div class="container">
         <footer class="footer">
+          <div class="footer-content">
+            <p>© {{ 'now' | date: '%Y' }} {{ site.name }} · 用 ❤️ 构建</p>
+          </div>
           {% include svg-icons.html %}
         </footer>
       </div>

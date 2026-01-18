@@ -1,0 +1,27 @@
+---
+layout: default
+title: AI 文章
+category: ai
+---
+
+<div class="category-header">
+    <span class="category-icon">🤖</span>
+    <h1 class="ai">AI 人工智能</h1>
+    <p>探索人工智能、机器学习、深度学习的最新技术和应用。从 LLM 大模型到 AI Agent，深入理解 AI 的原理与实践。</p>
+</div>
+
+<div class="posts">
+    {% for post in site.posts %}
+    {% if post.category == 'ai' %}
+    <article class="post">
+        <span class="post-category ai">🤖 AI</span>
+        <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+        <div class="date">{{ post.date | date: "%Y年%m月%d日" }}</div>
+        <div class="entry">
+            {{ post.excerpt | strip_html | truncatewords: 50 }}
+        </div>
+        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">阅读更多</a>
+    </article>
+    {% endif %}
+    {% endfor %}
+</div>

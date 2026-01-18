@@ -1,0 +1,27 @@
+---
+layout: default
+title: 系统文章
+category: system
+---
+
+<div class="category-header">
+    <span class="category-icon">⚙️</span>
+    <h1 class="system">系统 System</h1>
+    <p>系统设计、架构模式、DevOps 实践和基础设施。探讨如何构建高性能、高可用的系统。</p>
+</div>
+
+<div class="posts">
+    {% for post in site.posts %}
+    {% if post.category == 'system' %}
+    <article class="post">
+        <span class="post-category system">⚙️ 系统</span>
+        <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+        <div class="date">{{ post.date | date: "%Y年%m月%d日" }}</div>
+        <div class="entry">
+            {{ post.excerpt | strip_html | truncatewords: 50 }}
+        </div>
+        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">阅读更多</a>
+    </article>
+    {% endif %}
+    {% endfor %}
+</div>

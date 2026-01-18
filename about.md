@@ -1,15 +1,35 @@
 ---
 layout: page
-title: About
+title: 关于我
 permalink: /about/
 ---
 
-拖延症患者 
+<div style="text-align: center; margin-bottom: 2rem;">
+  <div style="font-size: 5rem; margin-bottom: 1rem;">👨‍💻</div>
+</div>
 
-### More Information
+## 👋 你好！
 
-Life is too short, so ...
+我是 **Lei**，一名热爱技术的软件工程师。
 
-### Contact me
+在这个博客里，我会分享：
 
-[lei.gao@outlook.com](mailto:lei.gao@outlook.com)
+### 🤖 AI 人工智能
+探索大语言模型、机器学习、深度学习的最新进展和实践经验。
+
+### 💻 Coding 编程技术
+分享编程技巧、代码优化、算法与数据结构的学习心得。
+
+### ⚙️ System 系统设计
+讨论系统架构、分布式系统、性能优化等技术话题。
+
+---
+
+## 📬 联系方式
+
+- **邮箱**: [lei.gao@outlook.com](mailto:lei.gao@outlook.com)
+- **GitHub**: [GaoLeiA](https://github.com/GaoLeiA)
+
+---
+
+> 技术是不断学习和探索的旅程，希望我的分享能对你有所帮助！ 🚀
