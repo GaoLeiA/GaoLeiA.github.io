@@ -11,8 +11,8 @@ export function generateStaticParams() {
     ];
 }
 
-export default function Category({ params }) {
-    const { slug } = params;
+export default async function Category({ params }) {
+    const { slug } = await params;
     const allPostsData = getSortedPostsData();
     const categoryPosts = allPostsData.filter(post => post.category === slug);
 

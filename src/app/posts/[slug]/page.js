@@ -8,7 +8,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-    const postData = await getPostData(params.slug);
+    const { slug } = await params;
+    const postData = await getPostData(slug);
     return {
         title: postData.title,
         description: postData.excerpt,
@@ -16,7 +17,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Post({ params }) {
-    const postData = await getPostData(params.slug);
+    const { slug } = await params;
+    const postData = await getPostData(slug);
 
     return (
         <div className="max-w-3xl mx-auto">
