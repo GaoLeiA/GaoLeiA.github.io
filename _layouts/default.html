@@ -1,62 +1,69 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
-    {% include meta.html %}
+<head>
+  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
-    <!-- Modern fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  {% include meta.html %}
 
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+  <!-- Modern fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
-  </head>
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}"
+    href="{{ site.baseurl }}/feed.xml" />
 
-  <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" alt="{{ site.name }}" /></a>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+</head>
 
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
+<body>
+  <div class="wrapper-masthead">
+    <div class="container">
+      <header class="masthead clearfix">
+        <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" alt="{{ site.name }}" /></a>
+
+        <div class="site-info">
+          <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+          <p class="site-description">{{ site.description }}</p>
+        </div>
+
+        <nav>
+          <a href="{{ site.baseurl }}/" {% if page.url=="/" %}class="active" {% endif %}>首页</a>
+          <a href="{{ site.baseurl }}/about" {% if page.url=="/about/" %}class="active" {% endif %}>关于</a>
+          <a href="https://github.com/GaoLeiA" target="_blank">GitHub</a>
+
+          <div class="category-nav">
+            <a href="{{ site.baseurl }}/category/ai" class="cat-ai">🤖 AI</a>
+            <a href="{{ site.baseurl }}/category/coding" class="cat-coding">💻 Coding</a>
+            <a href="{{ site.baseurl }}/category/system" class="cat-system">⚙️ 系统</a>
           </div>
-
-          <nav>
-            <a href="{{ site.baseurl }}/" {% if page.url == "/" %}class="active"{% endif %}>首页</a>
-            <a href="{{ site.baseurl }}/about" {% if page.url == "/about/" %}class="active"{% endif %}>关于</a>
-            <a href="https://github.com/GaoLeiA" target="_blank">GitHub</a>
-            
-            <div class="category-nav">
-              <a href="{{ site.baseurl }}/category/ai" class="cat-ai">🤖 AI</a>
-              <a href="{{ site.baseurl }}/category/coding" class="cat-coding">💻 Coding</a>
-              <a href="{{ site.baseurl }}/category/system" class="cat-system">⚙️ 系统</a>
-            </div>
-          </nav>
-        </header>
-      </div>
+        </nav>
+      </header>
     </div>
+  </div>
 
-    <div id="main" role="main" class="container">
-      {{ content }}
+  <div id="main" role="main" class="container">
+    {{ content }}
+  </div>
+
+  <div class="wrapper-footer">
+    <div class="container">
+      <footer class="footer">
+        <div class="footer-content">
+          <p>© {{ 'now' | date: '%Y' }} {{ site.name }} · 用 ❤️ 构建</p>
+        </div>
+        {% include svg-icons.html %}
+      </footer>
     </div>
+  </div>
 
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          <div class="footer-content">
-            <p>© {{ 'now' | date: '%Y' }} {{ site.name }} · 用 ❤️ 构建</p>
-          </div>
-          {% include svg-icons.html %}
-        </footer>
-      </div>
-    </div>
+  {% include analytics.html %}
+</body>
 
-    {% include analytics.html %}
-  </body>
 </html>

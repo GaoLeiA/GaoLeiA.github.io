@@ -2,11 +2,141 @@
 // IMPORTS
 //
 
-@import "bootstrap";
-@import "reset";
 @import "variables";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+/**************/
+/* RESET      */
+/**************/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 
 /**************/
 /* BASE RULES */
@@ -23,7 +153,9 @@ html {
 
 body {
   background: $dark-bg;
-  font: 18px/1.6 $font-primary;
+  font-family: $font-primary;
+  font-size: 18px;
+  line-height: 1.6;
   color: $dark-text;
   min-height: 100vh;
   position: relative;
@@ -79,11 +211,22 @@ h1 {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 
+  // Fallback for browsers that don't support text fill color
+  @supports not (-webkit-text-fill-color: transparent) {
+    background: none;
+    color: $primary-light;
+  }
+
   a {
     background: $gradient-primary;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+
+    @supports not (-webkit-text-fill-color: transparent) {
+      background: none;
+      color: $primary-light;
+    }
   }
 }
 
@@ -117,18 +260,17 @@ a {
   }
 }
 
-ul,
-ol {
+// Restore list styles that reset removed
+ul {
+  list-style-type: disc;
   margin: 1em 0;
   padding-left: 2em;
 }
 
-ul {
-  list-style-type: disc;
-}
-
 ol {
   list-style-type: decimal;
+  margin: 1em 0;
+  padding-left: 2em;
 }
 
 em,
@@ -271,6 +413,11 @@ pre {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     transition: opacity $transition-fast;
+
+    @supports not (-webkit-text-fill-color: transparent) {
+      background: none;
+      color: $primary-light;
+    }
 
     &:hover {
       opacity: 0.8;
