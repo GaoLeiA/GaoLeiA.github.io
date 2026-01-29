@@ -12,7 +12,8 @@ export function getSortedPostsData() {
         return [];
     }
 
-    const fileNames = fs.readdirSync(postsDirectory);
+    const fileNames = fs.readdirSync(postsDirectory)
+        .filter(fileName => fileName.endsWith('.md')); // 只处理 .md 文件
     const allPostsData = fileNames.map((fileName) => {
         // Remove ".md" from file name to get id (or slug)
         const id = fileName.replace(/\.md$/, '');
@@ -45,7 +46,8 @@ export function getAllPostIds() {
     if (!fs.existsSync(postsDirectory)) {
         return [];
     }
-    const fileNames = fs.readdirSync(postsDirectory);
+    const fileNames = fs.readdirSync(postsDirectory)
+        .filter(fileName => fileName.endsWith('.md')); // 只处理 .md 文件
     return fileNames.map((fileName) => {
         return {
             params: {
