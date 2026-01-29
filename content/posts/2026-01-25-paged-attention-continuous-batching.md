@@ -46,7 +46,7 @@ category: ai
 
 PagedAttention 借鉴了操作系统的**虚拟内存分页**机制：
 
-![PagedAttention 详解](./images/paged_attention_detail.png)
+![PagedAttention 详解](/posts-images/paged_attention_detail.png)
 
 **核心思想**：将 KV Cache 切分为固定大小的**块（Block）**，按需动态分配。
 
@@ -191,7 +191,7 @@ def paged_attention(query: Tensor,           # [1, num_heads, head_dim]
 
 ### 1.7 内存效率对比
 
-![KV Cache 架构对比](./images/vllm_kv_cache.png)
+![KV Cache 架构对比](/posts-images/vllm_kv_cache.png)
 
 | 指标 | 传统方案 | PagedAttention |
 |------|----------|----------------|
@@ -234,7 +234,7 @@ Batch 2: ├──────────────────────�
 
 Continuous Batching 允许请求在**迭代级别**动态加入和离开：
 
-![Continuous Batching 详解](./images/continuous_batching_detail.png)
+![Continuous Batching 详解](/posts-images/continuous_batching_detail.png)
 
 ```
 连续批处理 (Continuous Batching):
@@ -418,7 +418,7 @@ class SchedulerOutput:
 
 PagedAttention 和 Continuous Batching 相互增强，形成完美组合：
 
-![PagedAttention + Continuous Batching 协同](./images/paged_continuous_combined.png)
+![PagedAttention + Continuous Batching 协同](/posts-images/paged_continuous_combined.png)
 
 ### 3.1 协同效应
 

@@ -23,7 +23,7 @@ vLLM 支持多种视觉语言模型（VLM）和多模态大语言模型的高效
 
 ## 🏗️ 整体架构
 
-![vLLM 多模态架构](./images/multimodal_architecture.png)
+![vLLM 多模态架构](/posts-images/multimodal_architecture.png)
 
 ### 核心组件
 
@@ -38,7 +38,7 @@ vLLM 支持多种视觉语言模型（VLM）和多模态大语言模型的高效
 
 ## 📊 处理流程详解
 
-![多模态处理流程](./images/multimodal_processing_flow.png)
+![多模态处理流程](/posts-images/multimodal_processing_flow.png)
 
 ### Step 1: 用户输入
 
@@ -277,7 +277,7 @@ def forward(self, inputs_embeds, attention_metadata):
 
 ## 🎨 支持的多模态模型
 
-![多模态模型架构](./images/multimodal_models.png)
+![多模态模型架构](/posts-images/multimodal_models.png)
 
 ### 架构类型对比
 

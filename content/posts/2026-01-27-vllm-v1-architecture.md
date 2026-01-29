@@ -373,7 +373,7 @@ vLLM V1 架构的核心设计理念：
 
 展示 V1 的分层架构设计，包括 API 层、引擎层、核心层、执行器层、工作节点层和核心组件层。
 
-![vLLM V1 整体架构](./images/vllm_v1_architecture.png)
+![vLLM V1 整体架构](/posts-images/vllm_v1_architecture.png)
 
 ---
 
@@ -381,7 +381,7 @@ vLLM V1 架构的核心设计理念：
 
 展示各模块之间的交互关系：VllmConfig 配置中心、请求处理流水线、EngineCore 核心循环等。
 
-![vLLM V1 模块依赖](./images/vllm_v1_modules.png)
+![vLLM V1 模块依赖](/posts-images/vllm_v1_modules.png)
 
 ---
 
@@ -389,7 +389,7 @@ vLLM V1 架构的核心设计理念：
 
 详细展示 20+ 种注意力后端实现：FlashAttention、FlashInfer、Tree Attention、Mamba 等。
 
-![vLLM 注意力后端](./images/vllm_attention_backends.png)
+![vLLM 注意力后端](/posts-images/vllm_attention_backends.png)
 
 ---
 
@@ -397,7 +397,7 @@ vLLM V1 架构的核心设计理念：
 
 PagedAttention 核心原理：GPU 内存布局、逻辑到物理块映射、前缀缓存、KV Offload。
 
-![vLLM KV Cache](./images/vllm_kv_cache.png)
+![vLLM KV Cache](/posts-images/vllm_kv_cache.png)
 
 ---
 
@@ -405,7 +405,7 @@ PagedAttention 核心原理：GPU 内存布局、逻辑到物理块映射、前�
 
 推测解码加速技术：EAGLE、Medusa、Ngram 提议器，拒绝采样验证流程。
 
-![vLLM 推测解码](./images/vllm_spec_decode.png)
+![vLLM 推测解码](/posts-images/vllm_spec_decode.png)
 
 ---
 
@@ -413,7 +413,7 @@ PagedAttention 核心原理：GPU 内存布局、逻辑到物理块映射、前�
 
 Continuous Batching 和调度：请求状态机、Scheduler 核心逻辑、Chunked Prefill。
 
-![vLLM 调度器](./images/vllm_scheduler.png)
+![vLLM 调度器](/posts-images/vllm_scheduler.png)
 
 ---
 
@@ -421,7 +421,7 @@ Continuous Batching 和调度：请求状态机、Scheduler 核心逻辑、Chunk
 
 端到端请求处理：从 JSON 请求到响应返回的完整数据流。
 
-![vLLM 完整流程](./images/vllm_complete_flow.png)
+![vLLM 完整流程](/posts-images/vllm_complete_flow.png)
 
 ---
 

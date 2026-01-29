@@ -35,7 +35,7 @@ FlashAttention 是一种高效的注意力机制实现，通过优化内存访�
 
 在 vLLM V1 架构中，FlashAttention 作为核心 Attention Backend 之一，负责高效执行自注意力计算。它与 PagedAttention 协同工作，支持 KV Cache 的分页管理。
 
-![FlashAttention 架构](images/flashattention_architecture.png)
+![FlashAttention 架构](/posts-images/flashattention_architecture.png)
 
 ---
 
@@ -230,7 +230,7 @@ class FlashAttentionImpl(AttentionImpl):
 
 FlashAttention 使用**分块计算（Tiling）**和**在线 Softmax 算法**来优化内存访问：
 
-![FlashAttention 内存I/O对比](images/flashattention_memory_io.png)
+![FlashAttention 内存I/O对比](/posts-images/flashattention_memory_io.png)
 
 #### 核心优化技术
 
@@ -298,7 +298,7 @@ def online_softmax(q_block, kv_blocks):
 
 vLLM 支持 FlashAttention 2 和 FlashAttention 3 两个版本，根据硬件能力自动选择：
 
-![FlashAttention 版本对比](images/flashattention_versions.png)
+![FlashAttention 版本对比](/posts-images/flashattention_versions.png)
 
 ### 版本选择逻辑
 
@@ -511,7 +511,7 @@ def do_kv_cache_update(
 
 Cascade Attention 是 vLLM 中一种针对共享前缀的优化技术，可以显著减少重复计算。
 
-![Cascade Attention](images/cascade_attention.png)
+![Cascade Attention](/posts-images/cascade_attention.png)
 
 ### 问题场景
 

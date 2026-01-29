@@ -39,7 +39,7 @@ category: ai
 | DeepSeek-V3.2 | Sparse MLA | 深度稀疏优化 |
 | DeepSeek-R1 | Dense MLA | 推理模型 |
 
-![MLA 架构](images/mla_architecture.png)
+![MLA 架构](/posts-images/mla_architecture.png)
 
 ---
 
@@ -136,7 +136,7 @@ Total = 1,152 bytes / token
 
 MLA 根据场景使用两种不同的计算路径：
 
-![MLA 计算流程](images/mla_computation_flow.png)
+![MLA 计算流程](/posts-images/mla_computation_flow.png)
 
 ### Path A: Prefill 路径（计算友好）
 
@@ -242,7 +242,7 @@ KV_c shape: [Skv, Lkv]
 
 ## KV Cache 压缩
 
-![MLA 内存对比](images/mla_memory_comparison.png)
+![MLA 内存对比](/posts-images/mla_memory_comparison.png)
 
 ### KV Cache 格式
 
@@ -292,7 +292,7 @@ class MLACommonBackend(AttentionBackend):
 
 vLLM 为 MLA 提供了多种 Backend 实现：
 
-![MLA Backend 对比](images/mla_backends_comparison.png)
+![MLA Backend 对比](/posts-images/mla_backends_comparison.png)
 
 ### 类层次结构
 

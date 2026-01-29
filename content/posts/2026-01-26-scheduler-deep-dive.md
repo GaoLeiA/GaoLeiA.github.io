@@ -41,7 +41,7 @@ category: ai
 | Speculative Decoding | 支持推测解码调度 |
 | KV Transfer | 支持 P/D 分离架构 |
 
-![Scheduler 架构](images/scheduler_architecture.png)
+![Scheduler 架构](/posts-images/scheduler_architecture.png)
 
 ---
 
@@ -152,7 +152,7 @@ class PriorityRequestQueue(RequestQueue):
 
 ## 调度算法详解
 
-![调度算法流程](images/scheduler_algorithm_flow.png)
+![调度算法流程](/posts-images/scheduler_algorithm_flow.png)
 
 ### schedule() 方法概览
 
@@ -360,7 +360,7 @@ return scheduler_output
 
 ## 抢占机制
 
-![抢占机制](images/scheduler_preemption.png)
+![抢占机制](/posts-images/scheduler_preemption.png)
 
 ### 何时发生抢占？
 
@@ -533,7 +533,7 @@ def update_from_output(
 
 ## 完整调度示例
 
-![调度示例](images/scheduler_example.png)
+![调度示例](/posts-images/scheduler_example.png)
 
 ### 场景描述
 

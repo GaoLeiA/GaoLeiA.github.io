@@ -77,7 +77,7 @@ vLLM 提出了 **PagedAttention**，借鉴操作系统虚拟内存的分页机�
 
 ### 核心设计
 
-![KV Cache 架构](./images/vllm_kv_cache.png)
+![KV Cache 架构](/posts-images/vllm_kv_cache.png)
 
 **关键概念**：
 
@@ -125,7 +125,7 @@ Request A: [Block 0] → [Block 5] → [Block 2] → [Block 8]
 
 下图展示了单个请求从 Prefill 到 Decode 阶段 KV Cache 的变化：
 
-![KV Cache Evolution](./images/kv_cache_evolution.png)
+![KV Cache Evolution](/posts-images/kv_cache_evolution.png)
 
 #### Phase 1: Prefill（预填充阶段）
 
@@ -162,7 +162,7 @@ GPU 计算: 并行处理所有 5 个 token
 
 下图展示了多个并发请求同时运行时 KV Cache 的动态变化：
 
-![KV Cache Batching](./images/kv_cache_batching.png)
+![KV Cache Batching](/posts-images/kv_cache_batching.png)
 
 #### Timeline 详解
 

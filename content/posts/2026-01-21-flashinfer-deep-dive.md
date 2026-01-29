@@ -38,7 +38,7 @@ FlashInfer 作为 vLLM V1 的核心 Attention Backend 之一，特别适用于�
 - GQA 模型（Llama-3, Qwen 等）
 - 需要高吞吐量的生产环境
 
-![FlashInfer 架构](images/flashinfer_architecture.png)
+![FlashInfer 架构](/posts-images/flashinfer_architecture.png)
 
 ---
 
@@ -167,7 +167,7 @@ class FlashInferMetadataBuilder(AttentionMetadataBuilder[FlashInferMetadata]):
 
 FlashInfer 在 vLLM 中实现了一个创新的双路径系统，根据硬件和配置自动选择最优路径。
 
-![FlashInfer 处理流程](images/flashinfer_processing_flow.png)
+![FlashInfer 处理流程](/posts-images/flashinfer_processing_flow.png)
 
 ### Path A: 原生 FlashInfer 路径
 
@@ -316,7 +316,7 @@ def use_trtllm_attention(
 
 ## FlashInfer vs FlashAttention
 
-![FlashInfer vs FlashAttention 对比](images/flashinfer_vs_flashattention.png)
+![FlashInfer vs FlashAttention 对比](/posts-images/flashinfer_vs_flashattention.png)
 
 ### 功能对比表
 
@@ -514,7 +514,7 @@ if use_cascade:
 
 下面是一个使用 FlashInfer 处理混合批次的完整示例：
 
-![FlashInfer 推理示例](images/flashinfer_example_flow.png)
+![FlashInfer 推理示例](/posts-images/flashinfer_example_flow.png)
 
 ### 示例场景
 
